@@ -1,4 +1,15 @@
-body{
+#backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -1;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Add this line */
+}
+
+body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -6,15 +17,17 @@ body{
     flex-direction: column;
     height: 100vh;
     background-color: #000016;
+    z-index: 1; /* To Ensure content is above the video */
 }
 
-.header{
+.header {
     color: #fff;
     margin-bottom: 10px;
     margin-top: 80px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     text-shadow: 2px 4px 10px rgba(219, 6, 209, 0.9);
+    z-index: 2; /* To Keep text above the video */
 }
 
 #gameboard {
@@ -28,9 +41,8 @@ body{
                 inset 0 0 10px rgba(133, 128, 128, 0.1);
     border-radius: 12px; 
     padding: 10px;
+    z-index: 2;
 }
-
-
 
 
 .square{
