@@ -104,6 +104,11 @@ function checkScore() {
                 }
         });
 
+        if(InfoDisplay.value != "Cross Wins!" && InfoDisplay.value != "Circle Wins!"){
+            InfoDisplay.textContent = "Draw!";
+            disableBoard();
+        }
+
 }
 
 
