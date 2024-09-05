@@ -68,7 +68,7 @@ function addGo(e) {
 
 
 
-    InfoDisplay.textContent = "it is now " + go + "'s turn";
+    InfoDisplay.textContent = go + "'s turn";
     e.target.removeEventListener("click", addGo);
 
     checkScore();
