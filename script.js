@@ -27,4 +27,5 @@ function addGo(e) {
     const goDisplay = document.createElement("div");
     goDisplay.classList.add(go);
     e.target.append(goDisplay);
+    go = (go === "circle" ? "cross" : "circle")
 }
