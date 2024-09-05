@@ -125,6 +125,7 @@ function resetGame() {
         square.addEventListener("click", addGo); 
     });
 
+    InfoDisplay.textContent = "";
 
     isCirclePressed = false;
     isCrossPressed = false;
