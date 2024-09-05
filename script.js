@@ -12,10 +12,13 @@ const CircleBtn = document.getElementById("Circle");
 let isCirclePressed = false;
 let isCrossPressed = false;
 
+let go = "";
 
 function CirclePressed (){
     isCirclePressed = true;
     isCrossPressed = false;
+    go = "circle";
+    InfoDisplay.textContent = "Circle goes first";
 }
 
 function WhoStarts(){
@@ -23,9 +26,11 @@ function WhoStarts(){
     let go = (isCirclePressed ? "circle" : "cross");
 
     if (go == "circle"){
+        go = "circle";
         InfoDisplay.textContent = "Circle goes first";
     }
     else {
+        go = "cross";
         InfoDisplay.textContent = "Cross goes first";
     }
 }
@@ -36,7 +41,7 @@ CircleBtn.addEventListener('click', WhoStarts);
 CrossBtn.addEventListener('click', function() {
     isCirclePressed = false;
     isCrossPressed = true;
-    WhoStarts();
+    go = "cross";
 });
 
 
@@ -59,7 +64,9 @@ function addGo(e) {
     goDisplay.classList.add(go);
 
     e.target.append(goDisplay);
-    go = (go === "circle" ? "cross" : "circle");
+    go = (go == "circle" ? "cross" : "circle");
+
+
 
     InfoDisplay.textContent = "it is now " + go + "'s turn";
     e.target.removeEventListener("click", addGo);
@@ -84,7 +91,7 @@ function checkScore() {
                 if(circleWins) {
                     InfoDisplay.textContent = "Circle Wins!";
                     
-                    allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));
+                    disableBoard();
                 }
         });
 
@@ -93,8 +100,14 @@ function checkScore() {
                 allSquares[cell].firstChild?.classList.contains("cross"))
                 if(crossWins) {
                     InfoDisplay.textContent = "Cross Wins!";
-                    allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));
+                    disableBoard();
                 }
         });
 
+}
+
+
+function disableBoard() {
+    const allSquares = document.querySelectorAll(".square");
+    allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));  // Remove event listeners
 }
