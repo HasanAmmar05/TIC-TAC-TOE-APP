@@ -102,3 +102,43 @@ body{
     text-align: center;
     text-shadow: 2px 4px 10px rgba(219, 6, 209, 0.9);
 }
+
+
+
+.buttons-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color:  rgba(219, 6, 209, 0.8);
+    background-color: #1f1e1e;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(219, 6, 209, 0.4), 
+                0 6px 20px rgba(236, 233, 233, 0.2), 
+                inset 0 0 10px rgba(133, 128, 128, 0.2);
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #2b2a2a;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #3d3d3d;
+    transform: scale(1);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px 3px rgba(219, 6, 209, 0.8);
+}
