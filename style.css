@@ -49,7 +49,7 @@ body{
     height: 90px;
     width: 90px;
     border-radius: 50%;
-    border: 15px solid blue;
+    border: 15px solid #00FFFF;
     box-sizing: border-box;
 }
 
@@ -64,7 +64,7 @@ body{
 .cross::before, .cross::after{
     content: "";
     position: absolute;
-    background-color: red;
+    background-color:  #FFA500;
 }
 
 .cross:before {
@@ -141,4 +141,21 @@ button:active {
 button:focus {
     outline: none;
     box-shadow: 0 0 10px 3px rgba(219, 6, 209, 0.8);
+}
+
+
+#resetButton {
+    padding: 10px 20px;
+    background-color: #dc143c; /* Crimson color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+#resetButton:hover {
+    background-color: #ff5c5c;
 }
