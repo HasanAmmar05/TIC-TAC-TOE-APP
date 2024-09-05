@@ -30,12 +30,14 @@ function addGo(e) {
     e.target.append(goDisplay);
     go = (go === "circle" ? "cross" : "circle");
 
-    InfoDisplay.textContent = "it is now " + go + "'s go";
+    InfoDisplay.textContent = "it is now " + go + "'s turn";
     e.target.removeEventListener("click", addGo);
 
     checkScore();
 
 }
+
+InfoDisplay.id = "WinnerText";
 
 function checkScore() {
     const allSquares = document.querySelectorAll(".square");
@@ -50,6 +52,7 @@ function checkScore() {
                 allSquares[cell].firstChild?.classList.contains("circle"))
                 if(circleWins) {
                     InfoDisplay.textContent = "Circle Wins!";
+                    
                     allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));
                 }
         });
