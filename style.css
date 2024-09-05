@@ -1,33 +1,20 @@
-video#background-video {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    z-index: -1; /* Place behind everything */
-    object-fit: cover; /* Ensures the video covers the entire area */
-}
-
-/* Ensure the body takes full height and positions correctly */
-body {
+body{
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center gameboard vertically */
+    flex-direction: column;
     height: 100vh;
-    background-color: transparent; /* Transparent to see video */
+    background-color: #000016;
 }
 
-.header {
+.header{
     color: #fff;
     margin-bottom: 10px;
     margin-top: 80px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
     text-shadow: 2px 4px 10px rgba(219, 6, 209, 0.9);
-    z-index: 2; /* To Keep text above the video */
 }
 
 #gameboard {
@@ -41,8 +28,9 @@ body {
                 inset 0 0 10px rgba(133, 128, 128, 0.1);
     border-radius: 12px; 
     padding: 10px;
-    z-index: 2;
 }
+
+
 
 
 .square{
