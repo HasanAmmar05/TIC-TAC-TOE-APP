@@ -1,13 +1,44 @@
 const gameBoard = document.querySelector("#gameboard");
 const InfoDisplay = document.querySelector("#info");
-let go = "circle";
 const startCells = [
     "", "", "", 
     "", "", "", 
     "", "", ""
 ];
 
-InfoDisplay.textContent = "Circle goes first";
+const CrossBtn = document.getElementById("Cross");
+const CircleBtn = document.getElementById("Circle");
+
+let isCirclePressed = false;
+let isCrossPressed = false;
+
+
+function CirclePressed (){
+    isCirclePressed = true;
+    isCrossPressed = false;
+}
+
+function WhoStarts(){
+
+    let go = (isCirclePressed ? "circle" : "cross");
+
+    if (go == "circle"){
+        InfoDisplay.textContent = "Circle goes first";
+    }
+    else {
+        InfoDisplay.textContent = "Cross goes first";
+    }
+}
+
+CircleBtn.addEventListener('click', WhoStarts);
+
+
+CrossBtn.addEventListener('click', function() {
+    isCirclePressed = false;
+    isCrossPressed = true;
+    WhoStarts();
+});
+
 
 function createBoard() {
     startCells.forEach((_cell, index) => {
