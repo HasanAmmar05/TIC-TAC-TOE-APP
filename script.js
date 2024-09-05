@@ -111,3 +111,21 @@ function disableBoard() {
     const allSquares = document.querySelectorAll(".square");
     allSquares.forEach(square => square.replaceWith(square.cloneNode(true)));  // Remove event listeners
 }
+
+
+const resetButton = document.getElementById("resetButton");
+
+resetButton.addEventListener("click", resetGame);
+
+function resetGame() {
+    
+    const allSquares = document.querySelectorAll(".square");
+    allSquares.forEach(square => {
+        square.innerHTML = ""; 
+        square.addEventListener("click", addGo); 
+    });
+
+
+    isCirclePressed = false;
+    isCrossPressed = false;
+}
